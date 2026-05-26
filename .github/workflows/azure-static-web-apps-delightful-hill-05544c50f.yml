@@ -19,6 +19,14 @@ jobs:
         with:
           submodules: true
           lfs: false
+      
+      - name: Verify path
+        run: |
+          echo "PWD:"
+          pwd
+          echo "TREE:"
+          find . -maxdepth 3 -type d
+          
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
